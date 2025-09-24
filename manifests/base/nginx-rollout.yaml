@@ -6,7 +6,7 @@ spec:
   replicas: 5
   strategy:
     canary:
-      dynamicStableScale: true
+      #     dynamicStableScale: true
       maxSurge: 100%
       maxUnavailable: 50%
       steps:
