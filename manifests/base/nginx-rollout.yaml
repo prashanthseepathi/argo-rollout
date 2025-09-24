@@ -6,6 +6,9 @@ spec:
   replicas: 5
   strategy:
     canary:
+      dynamicStableScale: true
+      maxSurge: 100%
+      maxUnavailable: 50%
       steps:
       - setWeight: 5
       - pause: {}
@@ -26,7 +29,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: nginx:1.24.0
+        image: nginx:1.25.0
         ports:
         - name: http
           containerPort: 8080
